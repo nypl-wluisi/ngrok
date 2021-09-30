@@ -33,19 +33,7 @@ function downloadNgrok(callback, options) {
     const cdn = options.cdnUrl || process.env.NGROK_CDN_URL || 'https://nyplnodemirrors.s3.amazonaws.com';
     const cdnPath = options.cdnPath || process.env.NGROK_CDN_PATH || '/ngrok-stable-';
     const cdnFiles = {
-      darwinia32: cdn + cdnPath + 'darwin-386.zip',
-      darwinx64: cdn + cdnPath + 'darwin-amd64.zip',
-      darwinarm64: cdn + cdnPath + 'darwin-amd64.zip',
-      linuxarm: cdn + cdnPath + 'linux-arm.zip',
-      linuxarm64: cdn + cdnPath + 'linux-arm64.zip',
-      androidarm: cdn + cdnPath + 'linux-arm.zip',
-      androidarm64: cdn + cdnPath + 'linux-arm64.zip',
-      linuxia32: cdn + cdnPath + 'linux-386.zip',
       linuxx64: cdn + cdnPath + 'linux-amd64.zip',
-      win32ia32: cdn + cdnPath + 'windows-386.zip',
-      win32x64: cdn + cdnPath + 'windows-amd64.zip',
-      freebsdia32: cdn + cdnPath + 'freebsd-386.zip',
-      freebsdx64: cdn + cdnPath + 'freebsd-amd64.zip'
     };
     const url = cdnFiles[arch];
     if (!url) {
